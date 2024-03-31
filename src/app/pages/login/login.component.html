@@ -1,0 +1,28 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-4">
+        <div class="card pt-3 pb-3 text-center" style="width: 24rem;">
+          <img src="../../../assets/icons/login.png"   height="100" classe="card-img-top" alt="...">
+          <div class="card-body pt-5">
+            <h5 class="card-title mb-3">Inicio de Sesion</h5>
+
+            <form action="">
+              <div class="form-floating mb-3 ">
+                <input type="text" [(ngModel)]="loginData.username"  [ngModelOptions]="{standalone: true}" class="form-control" id="usernameInput" placeholder="">
+                <label for="usernameInput">Usuario</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" [(ngModel)]="loginData.password" [ngModelOptions]="{standalone: true}" class="form-control" id="passwordInput" placeholder="">
+                <label for="passwordInput">Contraseña</label>
+              </div>
+              <div class="col-12 mt-5 text-end">
+                <button class="btn btn-primary shadow" (click)="formSubmit()">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

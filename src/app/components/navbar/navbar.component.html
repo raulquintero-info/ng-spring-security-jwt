@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="'/'">CELULARES</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="loginService.getUserRole() == 'ADMIN'">
+          <a class="nav-link" [routerLink]="'/admin/dashboard'">Dashboard</a>
+        </li>
+        <li class="nav-item" *ngIf="loginService.getUserRole() == 'USER'">
+          <a class="nav-link" [routerLink]="'/user/dashboard'">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="'/listado'">Listado</a>
+        </li>
+        <li class="nav-item"  *ngIf="loginService.getUserRole() == 'ADMIN'">
+          <a class="nav-link active" aria-current="page" [routerLink]="'/forma'">Crear o Editar</a>
+        </li>
+
+
+      </ul>
+      <span class="navbar-text">
+        <span *ngIf="loginService.isLoggedIn()"> {{getRole() | lowercase}}</span>
+        <button  *ngIf="loginService.isLoggedIn()" class="btn btn-link" (click)="logout()">
+          Logout
+        </button>
+        <button class="btn btn-link" *ngIf="!loginService.isLoggedIn()" >
+          <a [routerLink]="'signup'" arial-label="login"><i class="bi bi-box-arrow-in-right"></i> Signup</a>
+        </button>
+        <button class="btn btn-link" *ngIf="!loginService.isLoggedIn()" >
+          <a [routerLink]="'login'" arial-label="login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+        </button>
+      </span>
+    </div>
+  </div>
+</nav>

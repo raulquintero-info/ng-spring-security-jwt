@@ -1,0 +1,29 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <div class="container text-center">
+          <img src="../../../assets/icons/addFriend.png" width="100" height="100" alt="">
+        </div>
+        <h1 class="text-center ">Registrate Aqui</h1>
+        <div class="mt-5 mb-5" >
+
+          <form (ngSubmit)="formSubmit()">
+            <div class="form-floating mb-3">
+              <input type="text" [(ngModel)]="user.username"  [ngModelOptions]="{standalone: true}" class="form-control" id="usernameInput" placeholder="">
+              <label for="usernameInput">Usuario</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" class="form-control" id="passwordInput" placeholder="">
+              <label for="passwordInput">Contrasena</label>
+            </div>
+            <div class="col-12 mt-5 text-end">
+              <button class="btn btn-primary me-3 shadow" type="reset">Limpiar forma</button>
+              <button class="btn btn-primary shadow" >Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

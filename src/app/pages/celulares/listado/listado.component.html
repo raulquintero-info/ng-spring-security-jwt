@@ -1,0 +1,30 @@
+<div class="bootstrap-wrap">
+  <div class="container">
+    <div class="row">
+      <h1>Listado de celulares</h1>
+
+
+      <div class="table-responsive">
+        <table class="table table-primary">
+          <thead>
+            <tr>
+              <th scope="col">id </th>
+              <th scope="col">marca</th>
+              <th scope="col">precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let phone of listado" class="">
+              <td scope="row">{{phone.idSmartPhone}}</td>
+              <td>{{ phone.marca}}</td>
+              <td>{{ phone.precio}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      {{ listado | json }}
+    </div>
+  </div>
+</div>
